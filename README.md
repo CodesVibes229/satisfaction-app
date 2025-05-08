@@ -1,41 +1,64 @@
-````markdown
-# 📊 Satisfaction Survey API
 
-Une mini application backend conçue avec **FastAPI** pour permettre la création, la gestion et l’analyse de questionnaires de satisfaction (ex. : banque, entreprise, etc.).
+```markdown
+# 🏦 Satisfaction App - Enquête de satisfaction client pour banque
 
-## 🚀 Fonctionnalités principales
+Une API FastAPI simple et sécurisée pour gérer des enquêtes de satisfaction client dans une structure bancaire.
 
-- Création de questionnaires
-- Enregistrement des réponses
-- Récupération des données
-- API REST avec documentation automatique (Swagger)
+## 🚀 Fonctionnalités
 
----
-
-## 🧰 Stack technique
-
-- **Langage** : Python 3.10+
-- **Framework** : FastAPI
-- **ORM** : SQLAlchemy
-- **Base de données** : PostgreSQL (ou SQLite pour tests)
-- **Documentation** : Swagger UI intégrée à FastAPI
+- Création, gestion et consultation des enquêtes de satisfaction
+- Stockage sécurisé via PostgreSQL
+- Architecture modulaire (FastAPI + SQLAlchemy)
+- Variables d’environnement protégées avec `.env`
+- Prêt pour déploiement Docker (à venir)
 
 ---
 
-## 📦 Installation
+## 🛠️ Technologies utilisées
 
-### 1. Cloner le projet
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Pydantic](https://pydantic-docs.helpmanual.io/)
+- [python-dotenv](https://github.com/theskumar/python-dotenv)
+
+---
+
+## 🧱 Structure du projet
+
+```
+
+satisfaction-app/
+│
+├── app/
+│   ├── main.py               # Point d'entrée FastAPI
+│   ├── database.py           # Connexion sécurisée à la DB
+│   ├── models/               # Modèles SQLAlchemy
+│   ├── routes/               # Endpoints FastAPI
+│   └── schemas/              # Schémas Pydantic
+│
+├── .env                      # Variables d'environnement (non versionné)
+├── requirements.txt          # Dépendances Python
+└── README.md                 # Ce fichier
+
+````
+
+---
+
+## ⚙️ Installation & Lancement
+
+### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/ton-utilisateur/satisfaction-app.git
+git clone https://github.com/CodesVibes229/satisfaction-app.git
 cd satisfaction-app
 ````
 
-### 2. Créer et activer un environnement virtuel
+### 2. Créer un environnement virtuel
 
 ```bash
-python -m venv env
-source env/bin/activate  # ou .\env\Scripts\activate sur Windows
+python3 -m venv env
+source env/bin/activate
 ```
 
 ### 3. Installer les dépendances
@@ -44,70 +67,36 @@ source env/bin/activate  # ou .\env\Scripts\activate sur Windows
 pip install -r requirements.txt
 ```
 
-### 4. Configurer la base de données
+### 4. Créer un fichier `.env`
 
-Modifier la variable `DATABASE_URL` dans `app/database.py` :
-
-```python
-DATABASE_URL = "postgresql://user:password@localhost/satisfaction_db"
+```ini
+# .env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=satisfaction_db
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
 ```
 
-Créer la base avec PostgreSQL :
-
-```bash
-createdb satisfaction_db
-```
-
----
-
-## ▶️ Lancer le serveur
+### 5. Lancer le serveur
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-L'application sera accessible à l’adresse :
-👉 [http://localhost:8000](http://localhost:8000)
-
-La documentation Swagger est disponible ici :
-👉 [http://localhost:8000/docs](http://localhost:8000/docs)
+Visitez ensuite [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) pour accéder à la documentation interactive Swagger.
 
 ---
 
-## 📁 Arborescence du projet
+## ✅ À venir
 
-```
-satisfaction-app/
-├── app/
-│   ├── main.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── database.py
-│   └── routes/
-│       └── survey.py
-├── requirements.txt
-└── README.md
-```
+* Authentification JWT
+* Dashboard d’administration (frontend)
+* Déploiement avec Docker et CI/CD
 
 ---
 
-## ✅ À faire / Roadmap
+## 📄 Licence
 
-* [x] Création de sondages
-* [ ] Ajout de réponses via API
-* [ ] Authentification pour les administrateurs
-* [ ] Visualisation des résultats
-* [ ] Interface frontend (React/Vue)
-
----
-
-## 👤 Auteur
-
-* [Ton Nom / Pseudo GitHub](https://github.com/ton-utilisateur)
-
----
-
-## 📝 Licence
-
-Ce projet est sous licence MIT. Utilisation libre avec attribution.
+Projet open-source sous licence MIT.
 
