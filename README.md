@@ -1,10 +1,10 @@
 
 ```markdown
-# 🏦 Satisfaction App - Enquête de satisfaction client pour banque
+🏦 Satisfaction App - Enquête de satisfaction client pour banque
 
 Une API FastAPI simple et sécurisée pour gérer des enquêtes de satisfaction client dans une structure bancaire.
 
-## 🚀 Fonctionnalités
+ 🚀 Fonctionnalités
 
 - Création, gestion et consultation des enquêtes de satisfaction
 - Stockage sécurisé via PostgreSQL
@@ -14,7 +14,7 @@ Une API FastAPI simple et sécurisée pour gérer des enquêtes de satisfaction 
 
 ---
 
-## 🛠️ Technologies utilisées
+🛠️ Technologies utilisées
 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [PostgreSQL](https://www.postgresql.org/)
@@ -24,7 +24,7 @@ Une API FastAPI simple et sécurisée pour gérer des enquêtes de satisfaction 
 
 ---
 
-## 🧱 Structure du projet
+ 🧱 Structure du projet
 
 ```
 
